@@ -1,36 +1,36 @@
 # 🗽 NYC Business Density & Demographic Predictor
 
-## 📋 Descripción del Proyecto
-Este proyecto de Data Science analiza la relación entre los microdatos demográficos de la Ciudad de Nueva York y la actividad económica local (licencias comerciales e individuales). A través de un proceso de ETL, análisis exploratorio (EDA) y modelado predictivo, se busca identificar los factores demográficos que impulsan la densidad de negocios en los distintos ZIP Codes de la ciudad.
+## 📋 Project Overview
+This Data Science project analyzes the relationship between New York City's neighborhood demographics and local economic activity (Business vs. Individual licenses). Through a complete ETL process, Exploratory Data Analysis (EDA), and predictive modeling, the project identifies which demographic factors most accurately predict business density across different ZIP codes.
 
-## 🚀 Hallazgos Clave
-* **Capacidad Predictiva:** Se logró validar que la demografía explica el **91% de la variabilidad** en la densidad comercial.
-* **Correlación de Negocios (Business):** Se identificó una correlación crítica de **0.90** entre la población Asiática y la densidad de licencias corporativas.
-* **Emprendimiento Individual:** Las zonas con mayoría Hispana presentan la mayor densidad de autoempleo (**6.2** vs 2.1 en zonas de mayoría Blanca).
-* **Industria Dominante:** "Home Improvement Salesperson" destaca como la actividad líder en licencias individuales en todos los sectores analizados.
+## 🚀 Key Findings
+* **Predictive Accuracy:** Validated that demographic composition explains **91% of the variability** in commercial business density.
+* **Business Correlation:** Identified a critical correlation of **0.90** between the Asian population percentage and corporate license density.
+* **Individual Entrepreneurship:** Hispanic-majority areas exhibit the highest self-employment density (**6.2** vs. 2.1 in white-majority areas).
+* **Market Leader:** "Home Improvement Salesperson" emerged as the dominant industry for individual licenses across all analyzed sectors.
 
-## 🧠 Justificación del Modelo: ¿Por qué Regresión Lineal?
-Para este análisis, se seleccionó la **Regresión Lineal Múltiple** como algoritmo de aprendizaje supervisado por las siguientes razones:
+## 🧠 Model Justification: Why Linear Regression?
+Multiple Linear Regression was selected as the supervised learning algorithm for this analysis due to the following technical considerations:
 
-1. **Naturaleza de los Datos:** Al trabajar con una variable objetivo continua (`biz_density`), la regresión es el marco estadístico adecuado.
-2. **Interpretabilidad:** A diferencia de modelos de "caja negra", la regresión lineal permite extraer **coeficientes exactos** (como el impacto de +295 en la población Asiática), facilitando la toma de decisiones basada en datos.
-3. **Eficiencia:** Dado que el EDA reveló relaciones lineales fuertes, este modelo ofrece una alta precisión (**R²: 0.91**) sin el riesgo de sobreajuste (*overfitting*) que presentan modelos más complejos.
-4. **Navaja de Ockham:** Se optó por la solución más sencilla y explicativa que cumpliera con los estándares de precisión requeridos para un análisis sociodemográfico.
+1. **Nature of the Target:** Since the dependent variable (`biz_density`) is continuous, regression provides the most appropriate statistical framework.
+2. **Interpretability:** Unlike "black-box" models, Linear Regression allows for the extraction of **exact coefficients** (e.g., the +295 impact factor for the Asian population), enabling data-driven business decisions.
+3. **Efficiency:** As the EDA revealed strong linear relationships, this model achieved high precision (**R²: 0.91**) without the risk of overfitting associated with more complex architectures.
+4. **Occam’s Razor:** The simplest explanation that fits the data is often the best. The model's performance confirmed that a linear approach was sufficient for high-granularity sociodemographic forecasting.
 
-## 📊 Métricas del Modelo
+## 📊 Model Performance Metrics
 * **R2 Score:** 0.9110
-* **MAE (Error Medio Absoluto):** 1.4491
-* **Coeficientes Principales:**
-    * `percent_asian_non_hispanic`: 295.22
-    * `percent_black_non_hispanic`: 216.73
-    * `percent_white_non_hispanic`: 44.13
+* **Mean Absolute Error (MAE):** 1.4491
+* **Feature Coefficients (Top Impact):**
+    * `percent_asian_non_hispanic`: +295.22
+    * `percent_black_non_hispanic`: +216.73
+    * `percent_white_non_hispanic`: +44.13
 
-## 🛠️ Stack Tecnológico
-* **Lenguaje:** Python 
-* **Librerías:** Pandas, Scikit-Learn, Matplotlib, Seaborn.
-* **Herramientas:** Jupyter Notebook.
+## 🛠️ Tech Stack
+* **Language:** Python
+* **Libraries:** Pandas, Scikit-Learn, Matplotlib, Seaborn.
+* **Tools:** Jupyter Notebooks / VS Code.
 
-## 📁 Estructura del Repositorio
-* `analisis_nyc.ipynb`: Flujo completo desde la limpieza hasta el modelo.
-* `nyc_final_analysis.csv`: Dataset final con predicciones incluidas.
-* `README.md`: Documentación del proyecto.
+## 📁 Repository Structure
+* `nyc_analysis.ipynb`: Main notebook containing the ETL flow, EDA, and Modeling.
+* `nyc_business_final_dataset.csv`: Final processed dataset including model predictions.
+* `README.md`: Project documentation and methodology.
